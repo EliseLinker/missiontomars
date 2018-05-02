@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify, redirect
 #from flask_pymongo import PyMongo
 import pymongo
 import scrape_news
+#import scrape_mars
 
 app = Flask(__name__)
 
