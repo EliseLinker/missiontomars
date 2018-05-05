@@ -42,7 +42,7 @@
           <!-- <div class="col-md-4"> -->
             <ul style="list-style: none;">
              {% for table in tables%}
-              <li>{{scrape_dictionary.0 }}: {{scrape_dictionary.1 }}</li>
+              <li>{{scrape_dictionary.description }}: {{scrape_dictionary.values }}</li>
               {% endfor%}
             </ul>
             </div>
@@ -53,12 +53,29 @@
       <div container>
         <div class="col-md-6">
           <div class="img" id="cerberus"> 
-            <h3 class="heading">{{scrape_dictionary.title}}</h3>
-              <img class="img-responsive" src="{{scrape_dictionary.img_url}}" alt="Cerberus">
+            <h3 class="heading">{{scrape_dictionary.cerberus_title}}</h3>
+              <img class="img-responsive" src="{{scrape_dictionary.cerberus_img_url}}" alt="Cerberus">
             </div>
         </div> 
-      </div>
-
+        <div class="col-md-6">
+            <div class="img" id="schiaparelli"> 
+              <h3 class="heading">{{scrape_dictionary.schiaparelli_title}}</h3>
+                <img class="img-responsive" src="{{scrape_dictionary.schiaparelli_img_url}}" alt="Schiaparelli">
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="img" id="syrtis_major"> 
+                <h3 class="heading">{{scrape_dictionary.syrtis_major_title}}</h3>
+                  <img class="img-responsive" src="{{scrape_dictionary.syrtis_major_img_url}}" alt="Syrtis Major">
+                </div>
+            </div>  
+            <div class="col-md-6">
+                <div class="img" id="valles_marineris"> 
+                  <h3 class="heading">{{scrape_dictionary.valles_marineris_title}}</h3>
+                    <img class="img-responsive" src="{{scrape_dictionary.valles_marineris_img_url}}" alt="Valles Marineris">
+                  </div>
+              </div>  
+        </div>
     </div>
   </div>
 </body>

@@ -104,12 +104,16 @@ def scrape():
     
     #print(marsdata[0])
     marsdata_table = pd.DataFrame(marsdata[0])
+    marsdata_table.columns = ["description","values"]
+    marsdata_table.set_index("description")
 
     scrape_dictionary["marsdata_table"] = marsdata_table.to_html(classes='mars_facts')    
     # return marsdata_table
 
 # scrape_marsdata()
 
+######################################################################################
+######################################################################################
 # def scrape_marshemispheres():
     # browser = webdriver.Chrome('chromedriver.exe')
     # scrape_dictionary = {'title':[],
@@ -131,8 +135,8 @@ def scrape():
     #print(soup.prettify())
     
     mylink.attrs
-    scrape_dictionary["title"] = mylink2
-    scrape_dictionary["img_url"] = (main_url + mylink.attrs["src"]) 
+    scrape_dictionary["cerberus_title"] = mylink2
+    scrape_dictionary["cerberus_img_url"] = (main_url + mylink.attrs["src"]) 
 
     # hemisphere_image_url["title"].append(mylink2) 
     # hemisphere_image_url["img_url"].append(main_url + mylink.attrs["src"]) 
@@ -152,10 +156,15 @@ def scrape():
     #print(soup.prettify())
     
     mylink.attrs
-    hemisphere_image_url1["title"].append(mylink2)
+    # hemisphere_image_url1["title"].append(mylink2)
+    # #hemisphere_image_urls["img_url"].append = mylink.attrs["src"]
+    # hemisphere_image_url1["img_url"].append(main_url + mylink.attrs["src"])
+
+    scrape_dictionary["schiaparelli_title"] = mylink2
+    scrape_dictionary["schiaparelli_img_url"] = (main_url + mylink.attrs["src"]) 
     #hemisphere_image_urls["img_url"].append = mylink.attrs["src"]
-    hemisphere_image_url1["img_url"].append(main_url + mylink.attrs["src"])
-    
+    #scrape_dictionary["schiaparelli_img_url"].append(main_url + mylink.attrs["src"])
+
     # syrtis_major
     hemisphere_image_url2 = {'title':[],
                              'img_url':[]}
@@ -171,10 +180,16 @@ def scrape():
     #print(soup.prettify())
     
     mylink.attrs
-    hemisphere_image_url2["title"].append(mylink2)
-    #hemisphere_image_urls["img_url"].append = mylink.attrs["src"]
-    hemisphere_image_url2["img_url"].append(main_url + mylink.attrs["src"])
-    
+
+    # hemisphere_image_url2["title"].append(mylink2)
+    # #hemisphere_image_urls["img_url"].append = mylink.attrs["src"]
+    # hemisphere_image_url2["img_url"].append(main_url + mylink.attrs["src"])
+
+    scrape_dictionary["syrtis_major_title"] = mylink2
+    scrape_dictionary["syrtis_major_img_url"] = (main_url + mylink.attrs["src"]) 
+
+
+
     # valles_marineris
     hemisphere_image_url3 = {'title':[],
                              'img_url':[]}
@@ -190,24 +205,23 @@ def scrape():
     #print(soup.prettify())
     
     mylink.attrs
-    hemisphere_image_url3["title"].append(mylink2)
-    hemisphere_image_url3["img_url"].append(main_url + mylink.attrs["src"])
-    
-    # hemisphere_image_urls = []
-    scrape_dictionary["img_url"] = hemisphere_image_url 
-    scrape_dictionary["img_url"] = hemisphere_image_url1 
-    scrape_dictionary["img_url"] = hemisphere_image_url2 
-    scrape_dictionary["img_url"] = hemisphere_image_url3
 
+    # hemisphere_image_url3["title"].append(mylink2)
+    # hemisphere_image_url3["img_url"].append(main_url + mylink.attrs["src"])
+    scrape_dictionary["valles_marineris_title"] = mylink2
+    scrape_dictionary["valles_marineris_img_url"] = (main_url + mylink.attrs["src"]) 
+   
     # hemisphere_image_urls = []
-    # hemisphere_image_urls.append(hemisphere_image_url) 
-    # hemisphere_image_urls.append(hemisphere_image_url1) 
-    # hemisphere_image_urls.append(hemisphere_image_url2) 
-    # hemisphere_image_urls.append(hemisphere_image_url3)
+    # hemisphere_image_urls["img_url"] = hemisphere_image_url 
+    # hemisphere_image_urls["img_url"] = hemisphere_image_url1 
+    # hemisphere_image_urls["img_url"] = hemisphere_image_url2 
+    # hemisphere_image_urls["img_url"] = hemisphere_image_url3
     
     # return hemisphere_image_urls
 
 # scrape_marshemispheres()
+###############################################################################################
+###############################################################################################
     return scrape_dictionary
 
 # print(scrape_dictionary)
