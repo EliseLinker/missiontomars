@@ -24,30 +24,40 @@
         <h4>{{scrape_dictionary.news_p}}</h4> 
       </div>
     </div>
+    <div class="container">
     <div class="img" id="featured">
       <div class="col-md-8">
         <h3 class="heading">Featured Mars Image</h3>
           <img class="img-responsive" src="{{scrape_dictionary.featured_image_url}}" alt="JPL Featured Image">
           </div>
       </div>
-      <div class="row" id="weather">
         <div class="col-md-4">
-          <h5 class="heading">Current Weather on Mars</h5>
-          <h6>{{scrape_dictionary.mars_weather}}</h6>
+        <div class="row" id="weather">
+          <!-- <div class="col-md-4"> -->
+            <h5 class="heading">Current Weather on Mars</h5>
+            <h6>{{scrape_dictionary.mars_weather}}</h6>
+          </div>
         </div>
-      </div>
-      <!-- <div class="row" id="facts">
-        <div class="col-md-4">
-          <h5 class="heading">Mars Facts</h5>
-          <h5>{{scrape_dictionary.marsdata_table}}</h5>
-        </div>
-      </div> -->
-      <div class="img" id="cerberus">
-        <div class="col-md-6">
-          <h3 class="heading">{{scrape_dictionary.title}}</h3>
-            <img class="img-responsive" src="{{scrape_dictionary.featured_image_url}}" alt="JPL Featured Image">
+      <div class="mars_facts" id="facts">
+          <!-- <div class="col-md-4"> -->
+            <ul style="list-style: none;">
+             {% for table in tables%}
+              <li>{{scrape_dictionary.0 }}: {{scrape_dictionary.1 }}</li>
+              {% endfor%}
+            </ul>
             </div>
-        </div>
+          </div>
+        </div> 
+      </div>  
+      </div>
+      <div container>
+        <div class="col-md-6">
+          <div class="img" id="cerberus"> 
+            <h3 class="heading">{{scrape_dictionary.title}}</h3>
+              <img class="img-responsive" src="{{scrape_dictionary.img_url}}" alt="Cerberus">
+            </div>
+        </div> 
+      </div>
 
     </div>
   </div>
