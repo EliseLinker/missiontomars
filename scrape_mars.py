@@ -8,15 +8,22 @@ from selenium import webdriver
 #      executable_path = {"executable_path": "chrome/chromedriver"}
 #      return Browser("chrome", **executable_path, headless=False)
 
+# def init_browser():
+#     # @NOTE: Replace the path with your actual path to the chromedriver
+#     executable_path = {"executable_path": "C:/Users/elise/Desktop/Bootcamp/Homework/missiontomars/chromedriver.exe"}
+#     return Browser("chrome", **executable_path, headless=False)
+
 
 # selenium 
+
 # 2. Define a function called scrape that will execute all of your scraping code from above and return one Python dictionary containing all of the scraped data.
 # def scrape():
 #    browser = init_browser()
-
 def scrape():
+    browser = webdriver.Chrome('C:/Users/elise/Desktop/Bootcamp/Homework/missiontomars/chromedriver.exe')
     # browser = init_browser()
-    browser = webdriver.Chrome('chromedriver.exe')
+    
+    
     scrape_dictionary = {}
 
 
@@ -120,9 +127,11 @@ def scrape():
     #print(soup.prettify())
     
     mylink.attrs
-    hemisphere_image_url["title"].append(mylink2) 
-    #hemisphere_image_urls["img_url"].append = mylink.attrs["src"]
-    hemisphere_image_url["img_url"].append(main_url + mylink.attrs["src"]) 
+    scrape_dictionary["title"] = mylink2
+    scrape_dictionary["img_url"] = (main_url + mylink.attrs["src"]) 
+
+    # hemisphere_image_url["title"].append(mylink2) 
+    # hemisphere_image_url["img_url"].append(main_url + mylink.attrs["src"]) 
     
     # schiaparelli
     hemisphere_image_url1 = {'title':[],
@@ -181,10 +190,10 @@ def scrape():
     hemisphere_image_url3["img_url"].append(main_url + mylink.attrs["src"])
     
     # hemisphere_image_urls = []
-    scrape_dictionary.append(hemisphere_image_url) 
-    scrape_dictionary.append(hemisphere_image_url1) 
-    scrape_dictionary.append(hemisphere_image_url2) 
-    scrape_dictionary.append(hemisphere_image_url3)
+    scrape_dictionary["img_url"] = hemisphere_image_url 
+    scrape_dictionary["img_url"] = hemisphere_image_url1 
+    scrape_dictionary["img_url"] = hemisphere_image_url2 
+    scrape_dictionary["img_url"] = hemisphere_image_url3
 
     # hemisphere_image_urls = []
     # hemisphere_image_urls.append(hemisphere_image_url) 
