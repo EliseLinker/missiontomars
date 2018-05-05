@@ -100,7 +100,7 @@ def scrape():
 
 # def scrape_marsdata():
     mars_data_url = 'https://space-facts.com/mars/'
-    marsdata_table = pd.read_html(mars_data_url)
+    scrape_dictionary["marsdata_table"] = pd.read_html(mars_data_url)
         
     # return marsdata_table
 
